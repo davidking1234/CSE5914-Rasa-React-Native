@@ -1,0 +1,137 @@
+version: '3.0'
+
+stories:
+  # - story: happy path
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: mood_great
+  #     - action: utter_happy
+
+  # - story: sad path 1
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: mood_unhappy
+  #     - action: utter_cheer_up
+  #     - action: utter_did_that_help
+  #     - intent: affirm
+  #     - action: utter_happy
+
+  # - story: sad path 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: mood_unhappy
+  #     - action: utter_cheer_up
+  #     - action: utter_did_that_help
+  #     - intent: deny
+  #     - action: utter_goodbye
+
+  # - story: path 4
+  #   steps:
+  #     - intent: bot_name
+  #     - action: utter_bot_name
+
+  #for each types flow story, clear all other pain slots and all other topic slots
+  - story: body_ache_types_sciatica_path
+    steps:
+      - intent: body_aches
+      - action: utter_body_aches
+      - intent: choose_body_ache_topic
+      - slot_was_set:
+          - types_topic: types
+      - action: utter_body_aches_types
+      - action: action_clear_carpal_tunnel_slot
+      - action: action_clear_influence_topic_slot
+      - action: action_clear_round_ligament_slot
+      - intent: choose_body_ache_type
+      - slot_was_set:
+          - sciatica: sciatica
+      - action: utter_body_aches_sciatica_definition
+      - action: action_clear_sciatica_slot
+
+  - story: body_ache_types_carpal_tunnel_path
+    steps:
+      - intent: body_aches
+      - action: utter_body_aches
+      - intent: choose_body_ache_topic
+      - slot_was_set:
+          - types_topic: types
+      - action: utter_body_aches_types
+      - action: action_clear_sciatica_slot
+      - action: action_clear_influence_topic_slot
+      - action: action_clear_round_ligament_slot
+      - intent: choose_body_ache_type
+      - slot_was_set:
+          - carpal_tunnel: carpal tunnel
+      - action: utter_body_aches_carpal_tunnel_definition
+      - action: action_clear_carpal_tunnel_slot
+
+  - story: body_ache_types_round_ligament_path
+    steps:
+      - intent: body_aches
+      - action: utter_body_aches
+      - intent: choose_body_ache_topic
+      - slot_was_set:
+          - types_topic: types
+      - action: utter_body_aches_types
+      - action: action_clear_sciatica_slot
+      - action: action_clear_carpal_tunnel_slot
+      - action: action_clear_influence_topic_slot
+      - intent: choose_body_ache_type
+      - slot_was_set:
+          - round_ligament: round ligament
+      - action: utter_body_aches_round_ligament_definition
+      - action: action_clear_round_ligament_slot
+
+  - story: body_ache_influencing_sciatica_path
+    steps:
+      - intent: body_aches
+      - action: utter_body_aches
+      - intent: choose_body_ache_topic
+      - slot_was_set:
+          - influence_topic: influence
+      - action: utter_body_aches_influence_types
+      - action: action_clear_carpal_tunnel_slot
+      - action: action_clear_types_topic_slot
+      - action: action_clear_round_ligament_slot
+      - intent: choose_body_ache_type
+      - slot_was_set:
+          - sciatica: sciatica
+      - action: utter_body_aches_influencing_factors_sciatica
+      - action: action_clear_sciatica_slot #could possibly combine both stories now that slots can be reset?
+
+  - story: body_ache_influencing_carpal_tunnel_path
+    steps:
+      - intent: body_aches
+      - action: utter_body_aches
+      - intent: choose_body_ache_topic
+      - slot_was_set:
+          - influence_topic: influence
+      - action: utter_body_aches_influence_types
+      - action: action_clear_sciatica_slot
+      - action: action_clear_types_topic_slot
+      - action: action_clear_round_ligament_slot
+      - intent: choose_body_ache_type
+      - slot_was_set:
+          - carpal_tunnel: carpal tunnel
+      - action: utter_body_aches_influencing_factors_carpal_tunnel
+      - action: action_clear_carpal_tunnel_slot
+
+  - story: body_ache_influencing_round_ligament_path
+    steps:
+      - intent: body_aches
+      - action: utter_body_aches
+      - intent: choose_body_ache_topic
+      - slot_was_set:
+          - influence_topic: influence
+      - action: utter_body_aches_influence_types
+      - action: action_clear_sciatica_slot
+      - action: action_clear_types_topic_slot
+      - action: action_clear_carpal_tunnel_slot
+      - intent: choose_body_ache_type
+      - slot_was_set:
+          - round_ligament: round ligament
+      - action: utter_body_aches_influencing_factors_round_ligament
+      - action: action_clear_round_ligament_slot
