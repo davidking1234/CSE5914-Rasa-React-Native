@@ -105,6 +105,10 @@ nlu:
       - i want to learn about body aches
       - pain
 
+  - intent: elastic_search
+    examples: |
+      - elastic search
+
   # - intent: body_aches_types
   #   examples: |
   #     - types

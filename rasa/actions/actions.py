@@ -77,3 +77,13 @@ class ClearInfluenceTopicSlot(Action):
         domain: Dict[Text, Any])-> List[Dict[Text, Any]]:
 
         return[SlotSet('influence_topic', None)]  
+    
+class ActionElasticSearch(Action):
+    def name(self) -> Text:
+        return 'action_elastic_search'
+    
+    def run(self, dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any])-> List[Dict[Text, Any]]:
+        
+        return

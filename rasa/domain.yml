@@ -128,6 +128,7 @@ actions:
   - action_clear_types_topic_slot
   - action_clear_influence_topic_slot
   - action_clear_round_ligament_slot
+  - action_elastic_search
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
