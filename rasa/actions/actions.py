@@ -47,3 +47,33 @@ class ClearCarpalTunnelSlot(Action):
 
         return[SlotSet('carpal_tunnel', None)]
     
+class ClearRoundLigamentSlot(Action):
+    def name(self) -> Text:
+        return 'action_clear_round_ligament_slot'
+    
+    def run(self, dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any])-> List[Dict[Text, Any]]:
+
+        return[SlotSet('round_ligament', None)]  
+    
+class ClearTypesTopicSlot(Action):
+    def name(self) -> Text:
+        return 'action_clear_types_topic_slot'
+    
+    def run(self, dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any])-> List[Dict[Text, Any]]:
+
+        return[SlotSet('types_topic', None)]
+
+
+class ClearInfluenceTopicSlot(Action):
+    def name(self) -> Text:
+        return 'action_clear_influence_topic_slot'
+    
+    def run(self, dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any])-> List[Dict[Text, Any]]:
+
+        return[SlotSet('influence_topic', None)]  
