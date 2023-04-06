@@ -86,4 +86,5 @@ class ActionElasticSearch(Action):
         tracker: Tracker,
         domain: Dict[Text, Any])-> List[Dict[Text, Any]]:
         
+        
         return
