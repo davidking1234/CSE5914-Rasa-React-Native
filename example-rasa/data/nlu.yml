@@ -1,4 +1,4 @@
-version: "3.1"
+version: '3.0'
 
 nlu:
   - intent: greet
@@ -83,18 +83,59 @@ nlu:
       - so saad
       - so sad
 
-  - intent: bot_challenge
-    examples: |
-      - are you a bot?
-      - are you a human?
-      - am I talking to a bot?
-      - am I talking to a human?
+  # - intent: bot_challenge
+  #   examples: |
+  #     - are you a bot?
+  #     - are you a human?
+  #     - am I talking to a bot?
+  #     - am I talking to a human?
 
-  - intent: bot_name
+  - intent: reset
     examples: |
-      - what is your name?
-      - what are you called?
-      - how can i address you?
+      - I want to restart the conversaion
+      - please restart the conversation
+      - Reset conversation
+
+  - intent: show_image
+    examples: |
+      - Show me a picture
+      - I want to see a picture
+
+  - intent: show_video
+    examples: |
+      - Show me a video
+      - I want to see a video
+
+  - intent: show_checkbox
+    examples: |
+      - Show me a checkbox
+      - I want to see a checkbox
+
+  - intent: show_checkbox
+    examples: |
+      - Show me buttons
+      - I want to see some buttons
+
+  - intent: inform
+    examples: |
+      - I like [Vegetables](food)
+      - I like [Fast food](food)
+      - I like [Fruits](food)
+      - I like [Meat](food)
+      - I like [Cereals](food), [Desserts](food) and [Drinks](food)
+
+  # - intent: bot_challenge
+  #   examples: |
+  #     - are you a bot?
+  #     - are you a human?
+  #     - am I talking to a bot?
+  #     - am I talking to a human?
+
+  # - intent: bot_name
+  #   examples: |
+  #     - what is your name?
+  #     - what are you called?
+  #     - how can i address you?
 
   - intent: body_aches
     examples: |
@@ -104,11 +145,6 @@ nlu:
       - i have a body ache
       - i want to learn about body aches
       - pain
-
-  - intent: elastic_search
-    examples: |
-      - elastic search
-
   # - intent: body_aches_types
   #   examples: |
   #     - types
@@ -133,7 +169,6 @@ nlu:
       - Teach me about [types](types_topic) please
       - What can you tell me about [types](types_topic)?
       - [types](types_topic)
-
   - regex: influence_topic
     examples: |
       - \binfluence\b
@@ -144,7 +179,6 @@ nlu:
       - Teach me about [influence](influence_topic) please
       - What can you tell me about [influence](influence_topic)?
       - [influence](influence_topic)
-
   - regex: carpal_tunnel
     examples: |
       - \bcarpal tunnel\b
@@ -155,7 +189,6 @@ nlu:
       - Teach me about [carpal tunnel](carpal_tunnel) please
       - What can you tell me about [carpal tunnel](carpal_tunnel)?
       - [carpal tunnel](carpal_tunnel)
-
   - regex: sciatica
     examples: |
       - \bsciatica\b
@@ -166,7 +199,6 @@ nlu:
       - Teach me about [sciatica](sciatica) please
       - What can you tell me about [sciatica](sciatica)?
       - [sciatica](sciatica)
-
   - regex: round_ligament
     examples: |
       - \bround ligament\b
@@ -177,5 +209,3 @@ nlu:
       - Teach me about [round ligament](round_ligament) please
       - What can you tell me about [round ligament](round_ligament)?
       - [round ligament](round_ligament)
-
-  
