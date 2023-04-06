@@ -20,6 +20,7 @@ intents:
   - choose_body_ache_topic
   - choose_body_ache_type
   - utter_body_aches_carpal_tunnel_definition
+  - elastic_search
 
 entities:
   - types_topic
@@ -115,6 +116,7 @@ responses:
 actions:
   - action_clear_sciatica_slot
   - action_clear_carpal_tunnel_slot
+  - action_elastic_search
 
 session_config:
   session_expiration_time: 60

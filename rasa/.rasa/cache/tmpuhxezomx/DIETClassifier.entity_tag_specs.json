@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-carpal_tunnel",
+      "2": "I-carpal_tunnel",
+      "3": "L-carpal_tunnel",
+      "4": "U-carpal_tunnel",
+      "5": "B-influence_topic",
+      "6": "I-influence_topic",
+      "7": "L-influence_topic",
+      "8": "U-influence_topic",
+      "9": "B-sciatica",
+      "10": "I-sciatica",
+      "11": "L-sciatica",
+      "12": "U-sciatica",
+      "13": "B-types_topic",
+      "14": "I-types_topic",
+      "15": "L-types_topic",
+      "16": "U-types_topic",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-carpal_tunnel": 1,
+      "I-carpal_tunnel": 2,
+      "L-carpal_tunnel": 3,
+      "U-carpal_tunnel": 4,
+      "B-influence_topic": 5,
+      "I-influence_topic": 6,
+      "L-influence_topic": 7,
+      "U-influence_topic": 8,
+      "B-sciatica": 9,
+      "I-sciatica": 10,
+      "L-sciatica": 11,
+      "U-sciatica": 12,
+      "B-types_topic": 13,
+      "I-types_topic": 14,
+      "L-types_topic": 15,
+      "U-types_topic": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]
