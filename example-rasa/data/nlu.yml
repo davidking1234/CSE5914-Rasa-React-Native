@@ -162,37 +162,54 @@ nlu:
   - regex: types_topic
     examples: |
       - \btypes\b
-  - intent: choose_body_ache_topic
+  - intent: choose_body_ache_topic_types
     examples: |
       - I want to learn about [types](types_topic)
       - Can you tell me more about [types](types_topic)?
       - Teach me about [types](types_topic) please
       - What can you tell me about [types](types_topic)?
       - [types](types_topic)
+
   - regex: influence_topic
     examples: |
       - \binfluence\b
-  - intent: choose_body_ache_topic
+  - intent: choose_body_ache_topic_influence
     examples: |
       - I want to learn about [influence](influence_topic)
       - Can you tell me more about [influence](influence_topic)?
       - Teach me about [influence](influence_topic) please
       - What can you tell me about [influence](influence_topic)?
       - [influence](influence_topic)
+      - [causes](influence_topic)
+
   - regex: carpal_tunnel
     examples: |
       - \bcarpal tunnel\b
-  - intent: choose_body_ache_type
+  - intent: choose_body_ache_type_carpal_tunnel
     examples: |
       - I want to learn about [carpal tunnel](carpal_tunnel)
       - Can you tell me more about [carpal tunnel](carpal_tunnel)?
       - Teach me about [carpal tunnel](carpal_tunnel) please
       - What can you tell me about [carpal tunnel](carpal_tunnel)?
       - [carpal tunnel](carpal_tunnel)
+
+
+  - regex: back_pain
+    examples: |
+      - \bback pain\b
+  - intent: choose_body_ache_type_back_pain
+    examples: |
+      - I want to learn about [back pain](back_pain)
+      - Can you tell me more about [back pain](back_pain)?
+      - Teach me about [back pain](back_pain) please
+      - What can you tell me about [back pain](back_pain)?
+      - [back pain](back_pain)
+
+
   - regex: sciatica
     examples: |
       - \bsciatica\b
-  - intent: choose_body_ache_type
+  - intent: choose_body_ache_type_sciatica
     examples: |
       - I want to learn about [sciatica](sciatica)
       - Can you tell me more about [sciatica](sciatica)?
@@ -202,7 +219,7 @@ nlu:
   - regex: round_ligament
     examples: |
       - \bround ligament\b
-  - intent: choose_body_ache_type
+  - intent: choose_body_ache_type_round_ligament
     examples: |
       - I want to learn about [round ligament](round_ligament)
       - Can you tell me more about [round ligament](round_ligament)?

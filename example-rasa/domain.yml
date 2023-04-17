@@ -24,8 +24,15 @@ intents:
   - body_aches_back_pain_definition
   - body_aches_sciatica_influence
   - choose_body_ache_topic
+  - choose_body_ache_topic_types
+  - choose_body_ache_topic_influence
   - choose_body_ache_type
+  - choose_body_ache_type_sciatica
+  - choose_body_ache_type_carpal_tunnel
+  - choose_body_ache_type_round_ligament
   - utter_body_aches_carpal_tunnel_definition
+  - choose_body_ache_type_back_pain
+  - elastic_search
 
 entities:
   - food
@@ -35,6 +42,7 @@ entities:
   - sciatica
   - carpal_tunnel
   - round_ligament
+  - back_pain
 
 slots:
   food:
@@ -94,6 +102,12 @@ slots:
     mappings:
       - type: from_entity
         entity: round_ligament
+  back_pain:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: back_pain
 
 responses:
   utter_greet:
@@ -169,6 +183,13 @@ responses:
 
   utter_body_aches_influencing_factors_round_ligament:
     - text: 'Round ligament pain is caused by stretching ligaments that occur as a result of a growing womb. '
+  
+  utter_body_aches_back_pain_definition:
+    - text: 'Back pain is usually found in the upper or lower back and hips.'
+
+  utter_body_aches_influencing_factors_back_pain:
+    - text: 'Back pain is influenced by a hormone that is released during pregnancy that causes your joints to loosen up. Coupled with a growing uterus, this causes your center of gravity to shift resulting in potential back pain.'
+
 
 actions:
   - action_ask_show_checkbox_form_food_list
@@ -181,6 +202,17 @@ actions:
   - action_clear_influence_topic_slot
   - action_clear_round_ligament_slot
   - action_elastic_search
+  - action_sciatica_types
+  - action_carpal_tunnel_types
+  - action_types
+  - action_influence
+  - action_sciatica_influence
+  - action_carpal_tunnel_influence
+  - action_round_ligament_types
+  - action_round_ligament_influence
+  - action_clear_back_pain_slot
+  - action_back_pain_influence
+  - action_back_pain_types
 
 forms:
   show_checkbox_form:
