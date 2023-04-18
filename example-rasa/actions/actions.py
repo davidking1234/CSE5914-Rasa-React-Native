@@ -11,7 +11,7 @@ from rasa_sdk.events import FormValidation, SlotSet, Restarted
 from rasa_sdk.executor import CollectingDispatcher
 import json
 from datetime import datetime
-#from elasticsearch import Elasticsearch
+from elasticsearch import Elasticsearch
 
 
 
@@ -78,8 +78,8 @@ dict_list = [{'tag': ['sids', 'sleep', 'crib', 'babys', 'baby'], 'link': 'https:
 
 # es = Elasticsearch('https://localhost:9200')
 USER = 'elastic'
-PASS = 'PASSWORD'
-#es = Elasticsearch(hosts="https://localhost:9200", basic_auth=(USER, PASS), verify_certs=False)
+PASS = 'k1KZD+0=snDvy4YFpNwf'
+es = Elasticsearch(hosts="https://localhost:9200", basic_auth=(USER, PASS), verify_certs=False)
 
 # Updating Index
 def index_documents():
@@ -109,19 +109,26 @@ def search_documents(term):
 # !!!!! END ELASTIC SEARCH
 class ActionElasticSearch(Action):
     def name(self) -> Text:
+        index_documents()
         return 'action_elastic_search'
     
     def run(self, dispatcher: CollectingDispatcher,
         tracker: Tracker,
         domain: Dict[Text, Any])-> List[Dict[Text, Any]]:
-        #index_documents()
+        # index_documents()
         print("ES CALLED")
         msg = tracker.latest_message['text']
-
-        #search_term = msg.remove("es")
+        
+        to_search = msg.split()
+        search_term = to_search[1]
         print("message: ", msg, "dict: ", tracker.latest_message)
-        #link = search_documents('sleep')
-        #dispatcher.utter_message(text=link)
+        link = search_documents(search_term)
+        if link:
+            dispatcher.utter_message(text='Successfully searched ElasticSearch database for links relevant to ' + search_term + ': ')
+            dispatcher.utter_message(text='Here is the most relevant link: ' + link)
+        else:
+            dispatcher.utter_message(text='Sorry, there are no documents available for this keyword. To try again, please follow the format \'search\' + [keyword to search]')
+            dispatcher.utter_message(text='Some examples of terms to search for are: sleep, crib, infant, prenatal, baby.')
         return
 
 

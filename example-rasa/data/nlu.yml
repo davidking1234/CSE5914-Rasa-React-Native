@@ -126,8 +126,20 @@ nlu:
 
   - intent: elastic_search
     examples: |
-      - es
-      - es sleep
+      - search
+      - search sleep
+      - search crib
+      - search SIDS
+      - search infant
+      - search baby
+      - search mom
+      - search kids
+      - search pregnancy
+      - search prenatal
+      - search postpartum
+      - search IUD
+      - search implant
+      
   # - intent: bot_challenge
   #   examples: |
   #     - are you a bot?
