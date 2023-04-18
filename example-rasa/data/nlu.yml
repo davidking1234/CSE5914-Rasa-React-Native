@@ -1,4 +1,4 @@
-version: '3.0'
+version: '3.1'
 
 nlu:
   - intent: greet
@@ -124,6 +124,10 @@ nlu:
       - I like [Meat](food)
       - I like [Cereals](food), [Desserts](food) and [Drinks](food)
 
+  - intent: elastic_search
+    examples: |
+      - es
+      - es sleep
   # - intent: bot_challenge
   #   examples: |
   #     - are you a bot?
@@ -145,6 +149,19 @@ nlu:
       - i have a body ache
       - i want to learn about body aches
       - pain
+
+  
+    #  - elastic search
+#      - es sleep
+#      - es prenatal
+#      - es breastfeeding
+#      - es baby
+#      - es cribs
+#      - es babies
+#      - es pregnancy
+#      - es postpartum
+#      - es optum
+#     - es moms
   # - intent: body_aches_types
   #   examples: |
   #     - types
@@ -157,6 +174,24 @@ nlu:
   #     - factors
   #     - causes
   #     - why
+  # - regex: es_topic
+  #   examples: |
+  #     - ^[a-zA-Z\s]{0,50}$
+  # - intent: choose_es_topic
+  #   examples: |
+  #     - es [sleep](es_topic)
+  #     - es [prenatal](es_topic)
+  #     - es [breastfeeding](es_topic)
+  #     - es [baby](es_topic)
+  #     - es [cribs](es_topic)
+  #     - es [babies](es_topic)
+  #     - es [pregnancy](es_topic)
+  #     - es [postpartum](es_topic)
+  #     - es [optum](es_topic)
+  #     - es [moms](es_topic)
+
+
+  
 
   #after theyve been asked what they want to learn about body aches
   - regex: types_topic
