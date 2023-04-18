@@ -33,7 +33,7 @@ intents:
   - utter_body_aches_carpal_tunnel_definition
   - choose_body_ache_type_back_pain
   - elastic_search
-  - choose_es_topic
+  
 
 entities:
   - food

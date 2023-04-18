@@ -118,7 +118,7 @@ class ActionElasticSearch(Action):
         print("ES CALLED")
         msg = tracker.latest_message['text']
 
-        search_term = msg.remove("es")
+        #search_term = msg.remove("es")
         print("message: ", msg, "dict: ", tracker.latest_message)
         #link = search_documents('sleep')
         #dispatcher.utter_message(text=link)
@@ -400,16 +400,6 @@ class BackPainInfluence(Action):
         dispatcher.utter_message(response = "utter_body_aches_influencing_factors_back_pain")
         
         return None
-    
-class ActionElasticSearch(Action):
-    def name(self) -> Text:
-        return 'action_elastic_search'
-    
-    def run(self, dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any])-> List[Dict[Text, Any]]:
-        
-        return
 
 
 class ActionRestart(Action):
